@@ -1,0 +1,3 @@
+- I created pytorch conda environment to run this project. Do following to enable it from VS Code:
+  - opne Command Palette (⇧⌘P)
+  - search "python: Select", then select "Python: select interpreter" and choose the environment
