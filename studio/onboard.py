@@ -42,6 +42,16 @@ zeros = torch.zeros(size=(4, 2, 3))
 print(zeros)
 #size should be same in order to multiple
 
-multipled = random_image * zeros;
 print("\n---- multipled by zeros ----")
+multipled = random_image * zeros;
 print(multipled)
+
+print("\n---- range ----")
+range = torch.arange(100, 109)
+print(range)
+#start inclusive; end exclusive
+step_range = torch.arange(start=11, end=91, step=10);
+print(step_range)
+
+zero_like = torch.zeros_like(step_range)
+print("zero_like: ", zero_like)
