@@ -12,3 +12,5 @@ print(f"t1.min: {t1.min()}; max: {t1.max()}; mean: {t1.type(torch.float).mean()}
 # position of min, max, mean, median
 print(f"torch.argmin: {torch.argmin(t1)}; argmax: {torch.argmax(t1)};\n argsort: {torch.argsort}")
 print(f"t1.argmin: {t1.argmin()}; argmax: {t1.argmax()};\n argsort: {t1.argsort()}")
+
+
