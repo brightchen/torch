@@ -33,8 +33,30 @@ unsqueezed = t1_squeezed.unsqueeze(2)
 print(f"unsqueeze(2): {unsqueezed};\n unsqueezed shape: {unsqueezed.shape}")
 
 #permute
-t1 = torch.randint(0, 100, (2, 3, 4))
+t0 = torch.arange(0,24)
+t1 = torch.reshape(t0, (2, 3, 4))
+#t1 = torch.randint(0, 100, (2, 3, 4))
+
 #move the last dimension to first dimension, and become (4, 2, 3)
-permuted = t1.permute(2, 0, 1)
-print("origin: ", t1)
+permuted = t1.permute(2, 0, 1)  #shape (4,2,3)
+print("------------------------\norigin: ", t1)
 print(f"permute(2, 0, 1): {permuted}; permuted sharp: {permuted.shape}")
+
+#permuted is the view of originally
+print(t1[0,0,0]==permuted[0,0,0])
+t1[0,0,0] = 100
+print(t1[0,0,0]==permuted[0,0,0])
+t1[0,0,0] = 0
+
+#select with index
+print("------------------------\norigin: ", t1)
+print(f"t1[:,0,0]: {t1[:,0,0]}")
+print(f"t1[0,:,0]: {t1[0,:,0]}")
+print(f"t1[0,0,:]: {t1[0,0,:]}")
+
+t1 = torch.arange(0, 6)
+t1 = torch.reshape(t1, (2,3))
+print("------------------------\norigin: ", t1)
+print(f"t1[:,0]: {t1[:,0]}")
+print(f"t1[0,:]: {t1[0,:]}")
+
